@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RSAprojet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ce2ba5ce6f6ed82a3188c507fd1b747c53d3c1e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("RSAprojet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RSAprojet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
