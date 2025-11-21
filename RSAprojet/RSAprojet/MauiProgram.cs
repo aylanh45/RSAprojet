@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using RSAprojet.Services;
+using RSAprojet.Platforms.Android.Services;
 
 namespace RSAprojet
 {
@@ -15,8 +17,13 @@ namespace RSAprojet
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+#if ANDROID
+            // 👉 Enregistrement NFC Android dans DI
+            builder.Services.AddSingleton<INfcService, NfcService_Android>();
+#endif
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -1,25 +1,28 @@
-﻿namespace RSAprojet
+﻿public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    private readonly INfcService _nfc;
+
+    public MainPage(INfcService nfc)
     {
-        int count = 0;
+        InitializeComponent();
+        _nfc = nfc;
 
-        public MainPage()
+        _nfc.OnMessageReceived += (s, txt) =>
         {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+            Dispatcher.Dispatch(async () =>
+            {
+                await DisplayAlert("Message NFC reçu", txt, "OK");
+            });
+        };
     }
 
+    private void OnReceiveBtnClicked(object sender, EventArgs e)
+    {
+        _nfc.StartListening();
+    }
+
+    private void OnSendBtnClicked(object sender, EventArgs e)
+    {
+        _nfc.SendText("Contenu du fichier TXT");
+    }
 }

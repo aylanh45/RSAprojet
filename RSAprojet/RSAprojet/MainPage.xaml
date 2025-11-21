@@ -10,8 +10,7 @@
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                Aspect="AspectFit"/>
 
             <Label
                 Text="Hello, World!"
@@ -25,10 +24,15 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="ReceiveBtn"
+                Text="Recevoir des données" 
+                Clicked="OnReceiveBtnClicked"
+                HorizontalOptions="Fill" />
+            
+            <Button
+                x:Name="SendBtn"
+                Text="Envoyer des données" 
+                Clicked="OnSendBtnClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
