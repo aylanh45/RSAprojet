@@ -3,18 +3,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
+	<!-- Texte d'information -->
 	<TextView
         android:id="@+id/txtShareInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Partage en cours..."
         android:textSize="18sp"
-        android:gravity="center" />
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
 
+	<!-- Barre de progression -->
 	<ProgressBar
+        android:id="@+id/progressBarShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:indeterminate="true"
         android:layout_gravity="center" />
+
+	on pour revenir à l'affichage standard -->
+	<Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:layout_marginTop="30dp" />
 </LinearLayout>
