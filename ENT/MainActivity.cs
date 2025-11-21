@@ -73,7 +73,7 @@ namespace ENT
 
         private void ShowShareView(string fileName)
         {
-            SetContentView(Resource.Layout.content_share);
+            SetContentView(Resource.Layout.content_shared);
 
             TextView txtInfo = FindViewById<TextView>(Resource.Id.txtShareInfo);
             if (txtInfo != null)
